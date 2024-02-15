@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->nullable(false);
+            $table->unsignedBigInteger('category_id')->nullable(false);
+            $table->text('body')->nullable(false);
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
