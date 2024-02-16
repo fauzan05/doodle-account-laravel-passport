@@ -17,7 +17,7 @@ class TodoFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'body' => fake()->sentences(5, true)
         ];
     }
 }
