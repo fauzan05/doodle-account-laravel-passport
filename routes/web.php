@@ -1,10 +1,5 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DeveloperController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TodoController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,9 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::middleware('auth')->group(function() {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/developer', [DeveloperController::class, 'index']);
-});
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
