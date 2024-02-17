@@ -17,8 +17,10 @@ const app = createApp({});
 
 // import ExampleComponent from './components/ExampleComponent.vue';
 import TimelineComponent from './components/todos/Timeline.vue';
+import TodoComponent from './components/todos/Todo.vue';
 // app.component('example-component', ExampleComponent);
 app.component('timeline-component', TimelineComponent);
+app.component('todo-component', TodoComponent);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
