@@ -1,13 +1,8 @@
-create database doodle_account_passport;
-use doodle_account_passport;
+use simple_todolist;
 show tables;
 select * from users;
 select * from categories;
 select * from todos;
-select * from oauth_clients;
-select * from personal_access_tokens;
-select * from oauth_personal_access_clients;
-select * from oauth_access_tokens;
 delete from categories where id = 1;
 rollback;
 drop database simple_todolist;
