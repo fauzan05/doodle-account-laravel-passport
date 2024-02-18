@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DeveloperController;
 use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -31,7 +32,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function() {
+    Route::post('/todos', [TodoController::class, 'store']);
+    Route::get('/todos', [TodoController::class, 'index']);
+    Route::get('/categories', [CategoryController::class, 'index']);
+    
+    Route::get('/developer', [DeveloperController::class, 'index']);
+});
 
-Route::post('/todos', [TodoController::class, 'store'])->middleware('auth');
-Route::get('/todos', [TodoController::class, 'index'])->middleware('auth');
-Route::get('/categories', [CategoryController::class, 'index'])->middleware('auth');
+
