@@ -18,9 +18,16 @@ const app = createApp({});
 // import ExampleComponent from './components/ExampleComponent.vue';
 import TimelineComponent from './components/todos/Timeline.vue';
 import TodoComponent from './components/todos/Todo.vue';
+import AuthorizedClients from './components/passport/AuthorizedClients.vue';
+import Clients from './components/passport/Clients.vue';
+import PersonalAccessTokens from './components/passport/PersonalAccessTokens.vue';
 // app.component('example-component', ExampleComponent);
 app.component('timeline-component', TimelineComponent);
 app.component('todo-component', TodoComponent);
+app.component('passport-clients', Clients);
+app.component('passport-authorized-clients', AuthorizedClients);
+app.component('passport-personal-access-clients', PersonalAccessTokens);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

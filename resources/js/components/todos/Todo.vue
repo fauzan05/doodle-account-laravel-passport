@@ -35,6 +35,8 @@ export default {
             }).then((response) => {
                 // console.log("ini adalah body " + this.selected_category)
                 this.todos.unshift(response.data);
+                // console.log(response.data)
+                // console.log(this.todos)
                 this.body = null;
             }).catch(err => {
                 console.log(err);

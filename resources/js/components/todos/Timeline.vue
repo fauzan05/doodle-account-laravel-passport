@@ -8,7 +8,7 @@
             <div class="media py-3" v-for="(todo, index) in todos" :key="index">
                 <img class="mr-3" src="https://placehold.it/64x64" alt="">
                 <div class="media-body">
-                    <h5 class="mt-0">{{ todo.user.name }}</h5>
+                    <h5 class="mt-0">{{ todo.user ? todo.user.name : '' }}</h5>
                     <h6><strong>Category : {{ todo.category ? todo.category.name : '' }}</strong></h6>
                     {{ todo.body }}
                 </div>
@@ -31,6 +31,8 @@ export default {
         // mengambil data json pada endpoint /todos
         axios.get('/todos').then((response) => {
             this.todos = response.data;
+            // console.log(response.data)
+            // console.log(this.todos)
         }).catch((err) => {
             console.log(err);
         });

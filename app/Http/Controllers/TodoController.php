@@ -8,7 +8,7 @@ class TodoController extends Controller
 {
     public function index(Request $request)
     {
-        $todos = $request->user()->todos()->with(['user', 'category'])->orderBy('created_at', 'desc')->get();
+        $todos = $request->user()->todos()->with(['user', 'category'])->sortByLatest()->get();
         return $todos;
     }
 
@@ -26,7 +26,7 @@ class TodoController extends Controller
             'body' => $validatedData['body'],
             'category_id' => $validatedData['category_id']
         ])->load('user', 'category'); // Pastikan Anda telah memuat relasi 'user'
-
+        // $todos = $request->user()->todos()->with(['user', 'category'])->sortByLatest()->get();
         // Kembalikan hasilnya
         return $todo;
     }
