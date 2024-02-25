@@ -23,7 +23,4 @@ Route::middleware('auth:api')->group(function() {
     Route::get('/user', function() {
         return auth()->user();
     });
-    Route::get('/todos', [TodoController::class, 'index']);
-    Route::post('/todos', [TodoController::class, 'store']);
 });
-
