@@ -324,6 +324,7 @@
                             type="button"
                             class="btn btn-secondary"
                             data-dismiss="modal"
+                            @click="hiddenEditClientForm"
                         >
                             Close
                         </button>
@@ -357,6 +358,7 @@
                             class="close"
                             data-dismiss="modal"
                             aria-hidden="true"
+                            @click="hiddenEditClientForm"
                         >
                             &times;
                         </button>
@@ -382,6 +384,7 @@
                             type="button"
                             class="btn btn-secondary"
                             data-dismiss="modal"
+                            @click="hiddenEditClientForm"
                         >
                             Close
                         </button>
@@ -452,6 +455,12 @@ export default {
          */
         showCreateClientForm() {
             $("#modal-create-client").modal("show");
+        },
+        hiddenCreateClientForm() {
+            $("#modal-create-client").modal("hide");
+        },
+        hiddenEditClientForm() {
+            $("#modal-edit-client").modal("hide");
         },
         /**
          * Create a new OAuth client for the user.

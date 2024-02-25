@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DeveloperController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -23,20 +24,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware('auth')->group(function() {
-    Route::post('/todos', [TodoController::class, 'store']);
-    Route::get('/todos', [TodoController::class, 'index']);
-    Route::get('/categories', [CategoryController::class, 'index']);
-    
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/developer', [DeveloperController::class, 'index']);
 });
 

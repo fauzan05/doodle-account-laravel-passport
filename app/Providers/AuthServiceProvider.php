@@ -23,5 +23,11 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Passport::ignoreRoutes();
+        Passport::tokensCan([
+            'get-user' => 'Melihat nama dan email',
+        ]);
+
+        Passport::tokensExpireIn(now()->addMonth(1));
+        // Passport::refreshTokensExpireIn(now()->addDays(7));
     }
 }

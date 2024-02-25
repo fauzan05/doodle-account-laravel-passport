@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 mb-3">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 <div class="card-body">
@@ -12,14 +12,12 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                        
                     {{ __('You are logged in!') }}
                 </div>
             </div>
-            <div id="app" class="mt-4">
-                <timeline-component></timeline-component>
-            </div>
         </div>
+
     </div>
 </div>
 @endsection
